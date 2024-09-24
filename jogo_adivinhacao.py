@@ -4,9 +4,6 @@ from random import randint
 #variável do num do computador
 num_pc = randint(1,10)
 
-#variável input do num que o user digitou
-num_user = int(input("Chute um número de 1 a 10: "))
-
 #função para condicionar os números
 def num(num_user, num_pc):
     if num_user < num_pc:
@@ -18,10 +15,10 @@ def num(num_user, num_pc):
     else:
       return "Você acertou! Parabéns!"
 
+while True:
+  num_user = int(input("Chute um número de 1 a 10: ")) #variável input do num que o user digitou
+  resultado = num(num_user, num_pc)
+  print(resultado) #resultado para o usuário na tela
 
-resultado = num(num_user, num_pc)
-
-#resultado para o usuário na tela
-print(resultado)
-
-#esse código não possui um loop no número, caso erre o número, será gerado um novo número aleatório para o user acertar.
+  if num_user == num_pc:
+    break
